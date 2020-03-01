@@ -9,6 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @since 28-02-2020
+ * @author Gangadhar Chitra
+ *
+ */
+
 @Entity
 @Table(name = "BM_DETAILS_NEW")
 public class BudgetMonitorEntity implements Serializable {
@@ -16,12 +22,15 @@ public class BudgetMonitorEntity implements Serializable {
   private static final long serialVersionUID = 4291564255898904283L;
 
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "ID")
   private int id;
 
-  @Column(name = "NAME")
-  private String name;
+  @Column(name = "USER_NAME")
+  private String userName;
+
+  @Column(name = "USER_PASSWORD")
+  private String password;
 
   @Column(name = "TOTAL_BUDGET_AMOUNT")
   private int totalBudgetAmount;
@@ -29,8 +38,8 @@ public class BudgetMonitorEntity implements Serializable {
   @Column(name = "AVALIBLE_AMOUNT")
   private int avalibleAmount;
 
-  @Column(name = "COMMENTS")
-  private String comments;
+  @Column(name = "USER_COMMENTS")
+  private String UserComments;
 
   @Column(name = "new_Amount")
   private int newAmount;
@@ -43,28 +52,36 @@ public class BudgetMonitorEntity implements Serializable {
     this.id = id;
   }
 
-  public String getComments() {
-    return comments;
-  }
-
-  public void setComments(String comments) {
-    this.comments = comments;
-  }
-
   public int getNewAmount() {
     return newAmount;
   }
 
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public String getUserName() {
+    return userName;
+  }
+
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
+
+  public String getUserComments() {
+    return UserComments;
+  }
+
+  public void setUserComments(String userComments) {
+    UserComments = userComments;
+  }
+
   public void setNewAmount(int newAmount) {
     this.newAmount = newAmount;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
   }
 
   public int getTotalBudgetAmount() {
