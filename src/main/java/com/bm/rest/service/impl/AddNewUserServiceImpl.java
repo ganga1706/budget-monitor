@@ -26,7 +26,7 @@ public class AddNewUserServiceImpl implements AddNewUserService {
 
     boolean anyMatch = findAllByUserName.stream().map(BudgetMonitorEntity::getUserName).anyMatch(addNewUserRequest.getUserName()::equals);
     if (anyMatch) {
-     throw new BudgetException("1002", "duplicate user name...please try againe");
+     throw new BudgetException("1002", "duplicate user name...please try again");
     }
     AddNewUserResponse addNewUserResponse = new AddNewUserResponse();
     // for (BudgetMonitorEntity budgetMonitorEntity : findAllByUserName) {
