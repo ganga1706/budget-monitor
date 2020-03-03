@@ -17,8 +17,35 @@ public class ResponseContext implements Serializable {
   private String requestId;
   private String responseCode;
   private String responseMessage;
+  private String statusCode;
+  private String statusMessage;
+  private String totalMoney;
+  public String getStatusCode() {
+	return statusCode;
+}
 
-  public String getRequestId() {
+public void setStatusCode(String statusCode) {
+	this.statusCode = statusCode;
+}
+
+public String getStatusMessage() {
+	return statusMessage;
+}
+
+public void setStatusMessage(String statusMessage) {
+	this.statusMessage = statusMessage;
+}
+
+public String getTotalMoney() {
+	return totalMoney;
+}
+
+public void setTotalMoney(String totalMoney) {
+	this.totalMoney = totalMoney;
+}
+
+
+public String getRequestId() {
     return requestId;
   }
 
@@ -53,6 +80,12 @@ public class ResponseContext implements Serializable {
     builder.append(responseCode);
     builder.append(", responseMessage=");
     builder.append(responseMessage);
+    builder.append(", statusCode=");
+    builder.append(statusCode);
+    builder.append(", statusMessage=");
+    builder.append(statusMessage);
+    builder.append(", totalMoney=");
+    builder.append(totalMoney);    
     builder.append("]");
     return builder.toString();
   }
